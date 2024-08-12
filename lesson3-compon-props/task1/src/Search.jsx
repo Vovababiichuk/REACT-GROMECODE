@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './Search.scss';
+import './search.scss';
 
 const Search = ({ name }) => {
   return (
