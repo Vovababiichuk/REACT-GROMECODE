@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import './search.scss';
 
 const Search = (props) => {
+  console.log(props);
   return (
     <>
       <h1 className="search__title">{`Hello, ${props.name}. What to search for you?`}</h1>
