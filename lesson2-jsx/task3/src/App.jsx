@@ -1,22 +1,16 @@
 
 function App() {
-
   const time = new Date().getSeconds();
-  const colorText = time % 2 === 0 ? '#fff': '#000';
-  const colorBg = time % 2 === 0 ? '#000': '#fff';
+  const isEven = time % 2 === 0;
 
-  const textColor = {
-    color: colorText,
-  };
-
-  const bgColor = {
-    backgroundColor: colorBg,
+  const styles = {
+    color: isEven ? '#fff' : '#000',
+    backgroundColor: isEven ? '#000' : '#fff',
   }
 
-
   return (
-    <div className="seconds" style={bgColor}>
-      <div style={textColor}>{`Now is ${time}`}</div>
+    <div className="seconds" style={styles}>
+      {`Now is ${time}`}
     </div>
   )
 }
