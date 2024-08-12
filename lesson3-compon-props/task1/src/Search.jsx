@@ -19,4 +19,5 @@ Search.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
+
 export default Search;
