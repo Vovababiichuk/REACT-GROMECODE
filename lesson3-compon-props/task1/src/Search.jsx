@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types';
 import './search.scss';
 
-function Search ({ name }) {
+const Search = ({ name }) => {
   return (
     <>
       <h1 className="search__title">{`Hello, ${name}. What to search for you?`}</h1>
@@ -13,10 +12,6 @@ function Search ({ name }) {
       </div>
     </>
   );
-};
-
-Search.propTypes = {
-  name: PropTypes.string.isRequired,
 };
 
 export default Search;
