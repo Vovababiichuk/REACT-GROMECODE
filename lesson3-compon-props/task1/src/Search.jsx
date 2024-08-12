@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './search.scss';
 
 const Search = ({ name }) => {
@@ -12,6 +13,10 @@ const Search = ({ name }) => {
       </div>
     </>
   );
+};
+
+Search.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default Search;
