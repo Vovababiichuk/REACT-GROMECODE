@@ -1,7 +1,8 @@
+import Search from './Search'
 
 function App() {
   return (
-    <div>App</div>
+    <Search name="Tom" />
   );
 }
 
