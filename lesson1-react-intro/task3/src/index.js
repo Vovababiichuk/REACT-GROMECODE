@@ -6,8 +6,8 @@ const rootElement = document.getElementById('root');
 
 const element = (
 	<div className="greeting">
-		<div className="title">Hello, World!</div>
-		<div className="text">I'm learning React!</div>
+		<div className="greeting__title">Hello, World!</div>
+		<div className="greeting__text">I'm learning React!</div>
 	</div>
 )
 
