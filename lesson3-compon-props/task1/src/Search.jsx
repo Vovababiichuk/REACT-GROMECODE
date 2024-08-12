@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import './Search.scss';
 
-const Search = ({ name }) => {
+const Search = (props) => {
   return (
     <>
-      <h1 className="search__title">{`Hello, ${name}. What to search for you?`}</h1>
+      <h1 className="search__title">{`Hello, ${props.name}. What to search for you?`}</h1>
       <div className="search">
         <div className="search__field">
           <input type="text" className="search__input" />
