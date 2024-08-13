@@ -8,6 +8,6 @@ const userData = {
   birthPlace: 'London',
 };
 
-const App = () => <Profile user={userData} />;
+const App = () => <Profile userData={userData} />;
 
 export default App;

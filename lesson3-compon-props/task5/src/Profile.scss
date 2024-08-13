@@ -1,4 +1,23 @@
-.profile__name,
-.profile__birth {
-	font-weight: bold;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+	margin: 30px auto;
+
+  &__name,
+	&__birth {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 }
