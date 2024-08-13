@@ -5,7 +5,7 @@ import UserInfo from './UserInfo';
 
 const formatDate = date => moment(date).format('DD MMM YYYY');
 
-function Comment({ text, date, user: { name, avatarUrl } }) {
+function Comment({ text, date, author: { name, avatarUrl } }) {
   return (
     <div className="comment">
       <div className="user-info">
