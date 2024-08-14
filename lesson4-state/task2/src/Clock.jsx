@@ -9,14 +9,14 @@ const getTimeWithOffset = offset => {
   return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
 };
 
-const formateDate = date => moment(date).format('h:mm:ss A');
+const formatDate = date => moment(date).format('h:mm:ss A');
 
 const Clock = ({ location, offset}) => {
-  const [time, setTime] = useState(formateDate(getTimeWithOffset(offset)));
+  const [time, setTime] = useState(formatDate(getTimeWithOffset(offset)));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(prevTime => formateDate(getTimeWithOffset(offset)));
+      setTime(prevTime => formatDate(getTimeWithOffset(offset)));
     }, 1000);
 
     return () => clearInterval(interval);
