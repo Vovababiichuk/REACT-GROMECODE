@@ -23,7 +23,7 @@ module.exports = {
     'global-require': 0,
     'class-methods-use-this': 0,
     'import/no-extraneous-dependencies': 0,
-    'arrow-body-style': 1,
+    'arrow-body-style': off,
     'prefer-arrow-callback': 1,
   },
   settings: {
