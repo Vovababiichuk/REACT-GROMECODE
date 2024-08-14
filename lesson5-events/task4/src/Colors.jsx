@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const RED = 'red';
 const GREEN = 'green';
 const BLUE = 'blue';
-const bodyColorBg = document.querySelector('body');
 
 const Colors = () => {
   const handleSetBodyColor = color => {
-    bodyColorBg.style.backgroundColor = color;
+    document.body.style.backgroundColor = color;
   };
 
-  bodyColorBg.addEventListener('click', () => {
-    handleSetBodyColor('');
-  })
+  useEffect(() => {
+    const handleBodyClick = e => {
+      if (e.target.tagName !== 'BUTTON') {
+        handleSetBodyColor('');
+      }
+    };
+
+    document.body.addEventListener('click', handleBodyClick);
+
+    // Очистка эффекта при размонтировании компонента
+    return () => {
+      document.body.removeEventListener('click', handleBodyClick);
+    };
+  }, []);
 
   return (
     <div className="counter">
