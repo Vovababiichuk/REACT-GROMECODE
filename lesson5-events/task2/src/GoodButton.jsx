@@ -2,7 +2,7 @@ import React from 'react';
 
 const GoodButton = () => {
 	const handleClick = (e) => {
-		alert('Good job!');
+		alert(e.target.textContent);
 	}
 
 	return (
