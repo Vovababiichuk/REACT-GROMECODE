@@ -1,6 +1,6 @@
 import React from 'react';
-import Color from './Color.jsx';
+import Colors from './Colors.jsx';
 
-const App = () => <Color />;
+const App = () => <Colors />;
 
 export default App;

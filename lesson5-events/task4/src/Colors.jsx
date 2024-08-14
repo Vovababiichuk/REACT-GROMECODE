@@ -5,7 +5,7 @@ const GREEN = 'green';
 const BLUE = 'blue';
 const bodyColorBg = document.querySelector('body');
 
-const Color = () => {
+const Colors = () => {
   const handleSetBodyColor = color => {
     bodyColorBg.style.backgroundColor = color;
   };
@@ -35,4 +35,4 @@ const Color = () => {
   );
 };
 
-export default Color;
+export default Colors;
