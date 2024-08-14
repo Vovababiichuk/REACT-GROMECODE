@@ -9,21 +9,6 @@ const Colors = () => {
     document.body.style.backgroundColor = color;
   };
 
-  useEffect(() => {
-    const handleBodyClick = e => {
-      if (e.target.tagName !== 'BUTTON') {
-        handleSetBodyColor('');
-      }
-    };
-
-    document.body.addEventListener('click', handleBodyClick);
-
-    // Очистка эффекта при размонтировании компонента
-    return () => {
-      document.body.removeEventListener('click', handleBodyClick);
-    };
-  }, []);
-
   return (
     <div className="counter">
       <button
