@@ -2,10 +2,10 @@ import React from 'react'
 import { useState } from 'react';
 
 const Toggler = () => {
-  const [toggle, setToggle] = useState('off');
+  const [toggle, setToggle] = useState('Off');
 
   const handleToggler = () => {
-    setToggle(prevToggler => (prevToggler === 'on' ? 'off' : 'on'));
+    setToggle(prevToggler => (prevToggler === 'On' ? 'Off' : 'On'));
   }
 
   return (
