@@ -6,7 +6,7 @@ const Page = () => {
 	const [info, setInfo] = useState('');
 
 	const handleInfoIphone13 = () => {
-		setInfo('IPhone 13 - Price is 500$. Available in 2 colors');
+		setInfo('Price is 500$. Available in 2 colors');
 	}
 
 	const handleInfoIphone13Pro = () => {
