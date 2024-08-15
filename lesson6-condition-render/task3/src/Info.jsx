@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Info = ({ info }) => {
-	return (
-		info &&
-			<div className="message">{info}</div>
-	)
-}
+  return (
+    info && (
+      <div className="message">{info}</div>
+    )
+  );
+};
 
-export default Info
+export default Info;
