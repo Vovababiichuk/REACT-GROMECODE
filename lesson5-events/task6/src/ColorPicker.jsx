@@ -1,3 +1,5 @@
+//!  UseRef
+
 // import React from 'react';
 // import { useRef } from 'react';
 
@@ -45,48 +47,90 @@
 
 // export default ColorPicker;
 
-//! Class Component
+//!  UseState
 
 import React from 'react';
+import { useState } from 'react';
 
-export default class ColorPicker extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: 'Red',
-    };
+const ColorPicker = () => {
+  const [title, setTitle] = useState('Red');
+
+  const handleMouseEnter = color => {
+    setTitle(color);
   }
 
-  handleMouseEnter = color => {
-    this.setState({ title: color });
-  };
+  const handleMouseLeave = () => {
+    setTitle('');
+  }
 
-  handleMouseLeave = () => {
-    this.setState({ title: '' });
-  };
-
-  render() {
-    return (
-      <div className="picker">
-        <div className="picker__title">{this.state.title}</div>
-        <div className="picker__buttons">
-          <button
-            className="picker__button picker__button_coral"
-            onMouseEnter={() => this.handleMouseEnter('Coral')}
-            onMouseLeave={this.handleMouseLeave}
-          ></button>
-          <button
-            className="picker__button picker__button_aqua"
-            onMouseEnter={() => this.handleMouseEnter('Aqua')}
-            onMouseLeave={this.handleMouseLeave}
-          ></button>
-          <button
-            className="picker__button picker__button_bisque"
-            onMouseEnter={() => this.handleMouseEnter('Bisque')}
-            onMouseLeave={this.handleMouseLeave}
-          ></button>
-        </div>
+  return (
+    <div className="picker">
+      <div className="picker__title">{title}</div>
+      <div className="picker__buttons">
+        <button
+          className="picker__button picker__button_coral"
+          onMouseEnter={() => handleMouseEnter('Coral')}
+          onMouseLeave={handleMouseLeave}
+        ></button>
+        <button
+          className="picker__button picker__button_aqua"
+          onMouseEnter={() => handleMouseEnter('Aqua')}
+          onMouseLeave={handleMouseLeave}
+        ></button>
+        <button
+          className="picker__button picker__button_bisque"
+          onMouseEnter={() => handleMouseEnter('Bisque')}
+          onMouseLeave={handleMouseLeave}
+        ></button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default ColorPicker;
+
+//! Class Component
+
+// import React from 'react';
+
+// export default class ColorPicker extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       title: 'Red',
+//     };
+//   }
+
+//   handleMouseEnter = color => {
+//     this.setState({ title: color });
+//   };
+
+//   handleMouseLeave = () => {
+//     this.setState({ title: '' });
+//   };
+
+//   render() {
+//     return (
+//       <div className="picker">
+//         <div className="picker__title">{this.state.title}</div>
+//         <div className="picker__buttons">
+//           <button
+//             className="picker__button picker__button_coral"
+//             onMouseEnter={() => this.handleMouseEnter('Coral')}
+//             onMouseLeave={this.handleMouseLeave}
+//           ></button>
+//           <button
+//             className="picker__button picker__button_aqua"
+//             onMouseEnter={() => this.handleMouseEnter('Aqua')}
+//             onMouseLeave={this.handleMouseLeave}
+//           ></button>
+//           <button
+//             className="picker__button picker__button_bisque"
+//             onMouseEnter={() => this.handleMouseEnter('Bisque')}
+//             onMouseLeave={this.handleMouseLeave}
+//           ></button>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
