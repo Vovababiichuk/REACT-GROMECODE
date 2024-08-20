@@ -1,16 +1,32 @@
 import React from 'react';
+import UsersList from './UsersList.jsx';
 
-const numbers = [1, 2, 3];
+const users = [
+  {
+    id: 'id-0',
+    age: 21,
+    name: 'Bob',
+  },
+  {
+    id: 'id-1',
+    age: 17,
+    name: 'Tom',
+  },
+  {
+    id: 'id-2',
+    age: 18,
+    name: 'Tad',
+  },
+  {
+    id: 'id-3',
+    age: 45,
+    name: 'Sam',
+  },
+];
 
 const App = () => {
 	return (
-		<div>
-			<ul>
-				{numbers.map(num => (
-					<li key={num}>{num}</li>
-				))}
-			</ul>
-		</div>
+		<UsersList users={users} />
 	)
 };
 
