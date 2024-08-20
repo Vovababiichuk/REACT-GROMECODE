@@ -8,7 +8,7 @@ const UsersList = ({ users }) => {
   const handleToggleSort = () => {
     setIsAsc(!isAsc);
     setSortedUsers(prevUsers =>
-      [...prevUsers].sort((a, b) => (isAsc ? b.age - a.age : a.age - b.age)),
+      [...prevUsers].sort((a, b) => (isAsc ? a.age - b.age : b.age - a.age)),
     );
   };
 
