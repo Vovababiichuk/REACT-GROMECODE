@@ -2,17 +2,10 @@ import React from 'react';
 import moment from 'moment';
 
 const Transaction = ({ from, to, amount, rate, time }) => {
-  const formatAmount = (amount) => {
-    return new Intl.NumberFormat('en-GB').format(amount);
-  };
 
-  const formatTime = (time) => {
-    return moment(time).format('HH:mm');
-  };
-
-  const formatDate = (date) => {
-    return moment(date).format('D MMM');
-  }
+  const formatAmount = (amount) => new Intl.NumberFormat('en-GB').format(amount);
+  const formatTime = (time) => moment(time).format('HH:mm');
+  const formatDate = (date) => moment(date).format('D MMM');
 
   return (
     <li className="transaction">
