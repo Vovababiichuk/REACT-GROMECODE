@@ -33,43 +33,39 @@
 // export default Dimensions;
 
 //! ==================Class Component==================
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Dimensions extends Component {
   state = {
-    width: null,
-    height: null,
+    width: window.innerWidth,
+    height: window.innerHeight,
   };
 
   componentDidMount() {
-    window.addEventListener("resize", this.onResize);
-    const { innerWidth, innerHeight } = window;
-    this.setDimensions(innerWidth, innerHeight);
+    window.addEventListener('resize', this.onResize);
+    document.title = `${this.state.width}px - ${this.state.height}px`;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.width !== this.state.width || prevState.height !== this.state.height) {
+      document.title = `${this.state.width}px - ${this.state.height}px`;
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
 
-  onResize = (e) => {
-    const { innerWidth, innerHeight } = e.target;
-    this.setDimensions(innerWidth, innerHeight);
-  };
-
-  setDimensions = (width, height) => {
+  onResize = () => {
     this.setState({
-      width,
-      height,
+      width: window.innerWidth,
+      height: window.innerHeight,
     });
-    document.title = `${innerWidth}px - ${innerHeight}px`;
   };
 
   render() {
-    return (
-      <div className="dimensions">
-        {`${this.state.width}px - ${this.state.height}px`}
-      </div>
-    );
+    const { width, height } = this.state;
+    return <div className="dimensions">{`${width}px - ${height}px`}</div>;
   }
 }
 
