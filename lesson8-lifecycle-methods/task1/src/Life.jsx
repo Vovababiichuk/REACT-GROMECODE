@@ -31,6 +31,7 @@ export default class Life extends Component {
     console.log('return React element to build DOM'); // Виводимо текст у консоль на кожному рендері
     return (
       <div>
+				<span>Life</span>
       </div>
     );
   }
