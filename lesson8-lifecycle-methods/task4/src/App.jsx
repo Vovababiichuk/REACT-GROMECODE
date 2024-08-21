@@ -3,7 +3,7 @@ import User from './User.jsx';
 
 const App = () => {
   return (
-    <User userId={'facebook'} />
+    <User userId='facebook' />
   );
 };
 
