@@ -15,7 +15,9 @@ const Clock = ({ location, offset }) => {
       setTime(getTimeWithOffset(offset));
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [offset]);
 
   return (
