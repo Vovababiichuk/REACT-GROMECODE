@@ -20,12 +20,12 @@
 //   }, []);
 
 //   useEffect(() => {
-//     document.title = `${width} - ${height}`;
+//     document.title = `${width}px - ${height}px`;
 //   }, [width, height]);
 
 //   return (
 //     <div>
-//       {width} x {height}
+//       {width}px - {height}px
 //     </div>
 //   );
 // };
