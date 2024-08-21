@@ -15,7 +15,13 @@ const App = () => {
 
   return (
     <>
-      {showClocksToggle && <Clock locations={locations} />}
+      {showClocksToggle && (
+        <div className="clocks">
+          {locations.map(({ location, offset }) => (
+            <Clock key={location} location={location} offset={offset} />
+          ))}
+        </div>
+      )}
       <div className="clock__time">
         <button className="clock__btn" onClick={handleShowToggleClocks}>
           {showClocksToggle ? 'Hide clocks' : 'Show clocks'}

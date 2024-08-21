@@ -1,39 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
-const Clock = ({ locations }) => {
-  console.log('Clock rendered');
-  const [times, setTimes] = useState({});
+const getTimeWithOffset = offset => {
+  return moment()
+    .utcOffset(offset * 60)
+    .format('h:mm:ss A');
+};
+
+const Clock = ({ location, offset }) => {
+  const [time, setTime] = useState(getTimeWithOffset(offset));
 
   useEffect(() => {
-    console.log('EFFECT worked');
-    const updateTimes = () => {
-      const newTimes = locations.reduce((acc, { location, offset }) => {
-        acc[location] = moment()
-          .utcOffset(offset * 60)
-          .format('hh:mm:ss A');
-        return acc;
-      }, {});
+    const interval = setInterval(() => {
+      setTime(getTimeWithOffset(offset));
+    }, 1000);
 
-      setTimes(newTimes);
-    };
-
-    // Оновлюємо час при монтуванні компонента
-    updateTimes();
-
-    const intervalId = setInterval(updateTimes, 1000);
-
-    return () => clearInterval(intervalId);
-  }, [locations]);
+    return () => clearInterval(interval);
+  }, [offset]);
 
   return (
-    <div className="clocks">
-      {locations.map(({ location }) => (
-        <div className="clock" key={location}>
-          <div className="clock__location">{location}</div>
-          <div className="clock__time">{times[location]}</div>
-        </div>
-      ))}
+    <div className="clock">
+      <div className="clock__location">{location}</div>
+      <div className="clock__time">{time}</div>
     </div>
   );
 };
