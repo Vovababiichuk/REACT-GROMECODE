@@ -70,7 +70,7 @@ class Dimensions extends Component {
     const { width, height } = this.state;
     return (
       <div>
-        {width} x {height}
+        {`${width}px - ${height}px`}
       </div>
     );
   }
