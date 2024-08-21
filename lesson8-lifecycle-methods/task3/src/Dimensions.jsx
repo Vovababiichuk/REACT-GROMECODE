@@ -46,12 +46,12 @@ class Dimensions extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
-    document.title = `${this.state.width} - ${this.state.height}`;
+    document.title = `${this.state.width}px-${this.state.height}px`;
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.width !== this.state.width || prevState.height !== this.state.height) {
-      document.title = `${this.state.width} - ${this.state.height}`;
+      document.title = `${this.state.width}px-${this.state.height}px`;
     }
   }
 
@@ -70,7 +70,7 @@ class Dimensions extends Component {
     const { width, height } = this.state;
     return (
       <div>
-        {width}px x {height}px
+        {width}px-{height}px
       </div>
     );
   }
