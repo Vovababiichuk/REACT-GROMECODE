@@ -8,16 +8,16 @@ const getTimeWithOffset = offset => {
 };
 
 const Clock = ({ location, offset }) => {
+  console.log('Clock rendered');
   const [time, setTime] = useState(getTimeWithOffset(offset));
 
   useEffect(() => {
+    console.log('EFFECT CALLED');
     const interval = setInterval(() => {
       setTime(getTimeWithOffset(offset));
     }, 1000);
 
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, [offset]);
 
   return (

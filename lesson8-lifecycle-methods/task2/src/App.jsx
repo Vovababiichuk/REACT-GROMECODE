@@ -8,6 +8,7 @@ const locations = [
 ];
 
 const App = () => {
+  console.log('App rendered');
   const [showClocksToggle, setShowClocksToggle] = useState(true);
   const handleShowToggleClocks = () => {
     setShowClocksToggle(!showClocksToggle);
