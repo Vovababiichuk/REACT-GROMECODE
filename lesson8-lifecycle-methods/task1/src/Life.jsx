@@ -5,12 +5,12 @@ export default class Life extends Component {
 		super(props);
 
 		this.state = {
-			startText: 'good place to create state'
+			startText: 'constructor: good place to create state'
 		};
 	}
 
 	componentDidMount() {
-		console.log('API calls, subscriptions');
+		console.log('componentDidMount: API calls, subscriptions');
 	}
 
 	// Выводит в консоль текст перед каждым рендером, кроме первого.
