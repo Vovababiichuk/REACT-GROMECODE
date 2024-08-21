@@ -28,10 +28,9 @@ export default class Life extends Component {
   }
 
   render() {
-    console.log('render: return React element to build DOM'); // Виводимо текст у консоль на кожному рендері
+    console.log('return React element to build DOM'); // Виводимо текст у консоль на кожному рендері
     return (
       <div>
-        <div>return React element to build DOM</div>
       </div>
     );
   }
