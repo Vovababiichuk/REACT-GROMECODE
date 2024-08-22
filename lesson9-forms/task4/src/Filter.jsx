@@ -23,37 +23,22 @@
 
 // export default Filter;
 
-import React, { Component } from 'react';
 
-class Filter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: props.filterText
-    };
-  }
 
-  handleChange = (e) => {
-    this.setState({ value: e.target.value });
-    this.props.onChange(e.target.value); // Тест 5: вызов функции onChange при изменении текста
-  };
+import React from 'react';
 
-  render() {
-    const { count } = this.props;
-    const { value } = this.state;
-
-    return (
-      <div className="filter">
-        <span className="filter__count">{count}</span>
-        <input
-          onChange={this.handleChange}
-          type="text"
-          className="filter__input"
-          value={value}
-        />
-      </div>
-    );
-  }
-}
+const Filter = ({ filterText, count, onChange }) => {
+  return (
+    <div className="filter">
+      <span className="filter__count">{count}</span>
+      <input
+        type="text"
+        className="filter__input"
+        value={filterText}
+        onChange={onChange}
+      />
+    </div>
+  );
+};
 
 export default Filter;
