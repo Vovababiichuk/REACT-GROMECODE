@@ -1,11 +1,9 @@
 import React from 'react';
-import NumbersList from './NumbersList.jsx';
-
-const numbers = [1, 2, 3, 4, 5];
+import ConnectionStatus from './ConnectionStatus.jsx';
 
 const App = () => {
   return (
-    <NumbersList numbers={numbers} />
+    <ConnectionStatus />
   );
 };
 
