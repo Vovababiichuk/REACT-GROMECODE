@@ -2,11 +2,12 @@ import React from 'react';
 import UserForm from './UserForm.jsx';
 
 const App = () => {
-  const createUser = (users) => {
-    console.log(users);
-  }
+  const createUser = (userData) => {
+    console.log(userData);
+  };
+
   return (
-    <UserForm createUser={createUser} />
+    <UserForm onSubmit={createUser} />
   );
 };
 

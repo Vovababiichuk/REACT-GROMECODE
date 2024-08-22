@@ -69,8 +69,6 @@
 // };
 
 // export default UserForm;
-
-
 import React, { Component } from 'react';
 
 class UserForm extends Component {
@@ -84,7 +82,7 @@ class UserForm extends Component {
     };
   }
 
-  handleOnChange = (e) => {
+  handleOnChange = e => {
     const { name, value, checked, type } = e.target;
     const val = type === 'checkbox' ? checked : value;
 
@@ -94,9 +92,10 @@ class UserForm extends Component {
     }));
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
-    this.props.createUser(this.state);
+    const { name, student, occupation, about } = this.state;
+    this.props.onSubmit({ name, student, occupation, about });
   };
 
   render() {
