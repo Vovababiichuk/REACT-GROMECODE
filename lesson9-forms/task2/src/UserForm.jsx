@@ -1,3 +1,5 @@
+//! ==============Function component================
+
 // import React, { useState } from 'react';
 
 // const UserForm = ({ createUser }) => {
@@ -69,6 +71,9 @@
 // };
 
 // export default UserForm;
+
+//! ==========Class Component==========
+
 import React, { Component } from 'react';
 
 class UserForm extends Component {
