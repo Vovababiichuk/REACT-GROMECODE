@@ -5,7 +5,7 @@
 
     const handleSubmit = e => {
       e.preventDefault();
-      alert(`Search text: ${searchText}`);  
+      alert(`Search text: ${searchText}`);
     };
 
     const handleChange = (e) => {

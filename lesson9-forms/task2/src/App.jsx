@@ -1,11 +1,12 @@
 import React from 'react';
-import Life from './Life.jsx';
-
-const numbers = [1, 2, 3, 4, 5];
+import UserForm from './UserForm.jsx';
 
 const App = () => {
+  const createUser = (users) => {
+    console.log(users);
+  }
   return (
-    <Life />
+    <UserForm createUser={createUser} />
   );
 };
 
