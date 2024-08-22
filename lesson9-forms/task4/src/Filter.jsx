@@ -23,7 +23,6 @@
 
 // export default Filter;
 
-
 import React, { Component } from 'react';
 
 class Filter extends Component {
@@ -36,7 +35,7 @@ class Filter extends Component {
 
   handleChange = (e) => {
     this.setState({ value: e.target.value });
-    this.props.onChange(e.target.value); // Вызов функции при изменении текста
+    this.props.onChange(e.target.value); // Тест 5: вызов функции onChange при изменении текста
   };
 
   render() {

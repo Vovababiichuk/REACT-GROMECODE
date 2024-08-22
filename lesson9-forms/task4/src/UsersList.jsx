@@ -17,7 +17,6 @@
 
 // export default UsersList;
 
-
 import React, { Component } from 'react';
 import User from './User.jsx';
 import Filter from './Filter.jsx';

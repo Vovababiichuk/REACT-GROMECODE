@@ -12,7 +12,6 @@
 // export default User;
 
 
-
 import React, { Component } from 'react';
 
 class User extends Component {
