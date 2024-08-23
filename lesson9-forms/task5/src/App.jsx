@@ -1,12 +1,11 @@
 import React from 'react';
-import Life from './Life.jsx';
-
-const numbers = [1, 2, 3, 4, 5];
+import Game from './Game.jsx'
 
 const App = () => {
+  console.log('App rendered');
   return (
-    <Life />
-  );
-};
+    <Game />
+  )
+}
 
 export default App;

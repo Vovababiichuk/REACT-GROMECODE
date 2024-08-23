@@ -3,12 +3,199 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
 }
 
-#root {
-  height: 100vh;
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+//! ==================================Neon Style==========================
+
+/* $neon-bg-color: #0a0a0a;
+$neon-border-color: #00ffcc;
+$neon-square-bg-color: #111;
+$neon-font-color: #00ffcc;
+$neon-hover-bg-color: #00e6b8;
+$neon-active-bg-color: #00cc99;
+$border-radius: 6px;
+
+body {
+  background-color: $neon-bg-color;
+  color: $neon-font-color;
+  font-family: 'Arial', sans-serif;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px;
+
+  .game-board {
+    margin-right: 20px;
+  }
+
+  .game-info {
+    margin-left: 20px;
+    padding: 20px;
+    background-color: rgba(17, 17, 17, 0.9); // Напівпрозорий фон
+    border: 2px solid $neon-border-color;
+    border-radius: $border-radius;
+    color: $neon-font-color;
+
+    ol {
+      padding-left: 20px;
+
+      li {
+        margin-bottom: 10px;
+
+        button {
+          padding: 8px 12px;
+          margin-bottom: 5px;
+          background-color: $neon-square-bg-color;
+          border: 1px solid $neon-border-color;
+          cursor: pointer;
+          font-size: 16px;
+          color: $neon-font-color;
+          border-radius: $border-radius;
+          text-transform: uppercase;
+          transition: background-color 0.2s, transform 0.2s;
+
+          &:hover {
+            background-color: $neon-hover-bg-color;
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            background-color: $neon-active-bg-color;
+            transform: translateY(1px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.status {
+  margin: 20px 0;
+  font-size: 22px;
+  text-align: center;
+  color: $neon-font-color;
+  border-bottom: 2px solid $neon-border-color; // Нижній бордер для статусу
+  padding-bottom: 10px;
+}
+
+.board-row {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 10px;
 }
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: $neon-square-bg-color;
+  border: 2px solid $neon-border-color; // Чіткий неоновий бордер
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 100px;
+  text-align: center;
+  cursor: pointer;
+  color: $neon-font-color;
+  border-radius: $border-radius;
+  transition: background-color 0.2s, transform 0.2s;
+
+  &:hover {
+    background-color: $neon-hover-bg-color;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: $neon-active-bg-color;
+    transform: translateY(1px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+} */
