@@ -11,9 +11,8 @@
 
 // export default Profile;
 
-
-import React from "react";
-import UserForm from "./UserForm.jsx";
+import React from 'react';
+import UserForm from './UserForm';
 
 const Profile = ({ userData, handleChange }) => {
   return (
