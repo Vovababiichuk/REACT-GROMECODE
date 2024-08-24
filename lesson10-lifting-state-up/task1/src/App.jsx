@@ -38,12 +38,9 @@ import UserProfile from './UserProfile';
 import UserMenu from './UserMenu';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userData: null,
-    };
-  }
+  state = {
+    userData: null,
+  };
 
   componentDidMount() {
     const { userId = 'github' } = this.props;
@@ -61,14 +58,12 @@ class App extends Component {
   }
 
   render() {
-    const { userData } = this.state;
-
     return (
       <div className="page">
         <header className="header">
-          <UserMenu userData={userData} />
+          <UserMenu userData={this.state.userData} />
         </header>
-        <UserProfile userData={userData} />
+        <UserProfile userData={this.state.userData} />
       </div>
     );
   }
