@@ -1,3 +1,5 @@
+//! =================Function component===================
+
 // import React, { useState } from 'react';
 // import CartTitle from './CartTitle';
 // import ProductsList from './ProductsList';
@@ -26,6 +28,8 @@
 
 // export default ShoppingCart;
 
+//! =================Class component===================
+
 import React, { Component } from 'react';
 import ProductsList from './ProductsList';
 import CartTitle from './CartTitle';
@@ -42,6 +46,11 @@ class ShoppingCart extends Component {
         id: '2',
         name: 'iPad Pro',
         price: 799,
+      },
+      {
+        id: '3',
+        name: 'MacBook Pro',
+        price: 1299,
       },
     ],
   };
