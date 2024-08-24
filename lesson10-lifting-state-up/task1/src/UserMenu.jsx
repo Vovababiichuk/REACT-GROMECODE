@@ -1,21 +1,19 @@
 import React from 'react';
 
-const UserMenu = ({ avatarUrl, name }) => {
-  if (!avatarUrl || !name) {
-    return null;
-  }
-
+const UserMenu = ({ userData }) => {
+	if (!userData) {
+		return null;
+	}
+	const { avatar_url: avatarUrl, name } = userData;
   return (
-    <header className="header">
-      <div className="menu">
-        <span className="menu__greeting">{`Hello, ${name}`}</span>
-        <img
-          alt={`${name} Avatar`}
-          src={avatarUrl}
-          className="menu__avatar"
-        />
-      </div>
-    </header>
+    <div className="menu">
+      <span className="menu__greeting">{`Hello, ${name}`}</span>
+      <img
+        alt={`${name}'s Avatar`}
+        src={avatarUrl}
+        className="menu__avatar"
+      />
+    </div>
   );
 };
 
