@@ -33,30 +33,29 @@
 
 //! =====================Class Component===================
 
-import React, { Component } from 'react';
-import UserProfile from './UserProfile';
-import UserMenu from './UserMenu';
+import React, { Component } from "react";
+import UserProfile from "./UserProfile.jsx";
+import UserMenu from "./UserMenu.jsx";
 
-class App extends Component {
+class Page extends Component {
   state = {
     userData: null,
   };
 
   componentDidMount() {
-    const { userId = 'github' } = this.props;
-    const baseUrl = `https://api.github.com/users/${userId}`;
-
-    fetch(baseUrl)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return res.json();
-      })
-      .then(data => this.setState({ userData: data }))
-      .catch(err => console.error('Error fetching user data:', err));
+    this.fetchUserData(this.props.userId);
   }
 
+  fetchUserData = (userId) => {
+    const userUrl = `https://api.github.com/users/${userId}`;
+    fetch(userUrl)
+      .then((response) => response.json())
+      .then((userData) => {
+        this.setState({
+          userData,
+        });
+      });
+  };
   render() {
     return (
       <div className="page">
@@ -69,4 +68,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Page;
