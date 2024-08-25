@@ -1,71 +1,15 @@
-//! =====================Function Component===================
+import React from 'react';
+import FilterableProductTable from './FilterableProductTable'
 
-// import React, { useEffect, useState } from 'react';
-// import UserProfile from './UserProfile';
-// import UserMenu from './UserMenu';
+const PRODUCTS = [
+  {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
+  {category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit"},
+  {category: "Fruits", price: "$2", stocked: false, name: "Passionfruit"},
+  {category: "Vegetables", price: "$2", stocked: true, name: "Spinach"},
+  {category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin"},
+  {category: "Vegetables", price: "$1", stocked: true, name: "Peas"}
+];
 
-// const App = ({ userId = 'github' }) => {
-//   const [userData, setUserData] = useState(null);
-
-//   useEffect(() => {
-//     fetch(`https://api.github.com/users/${userId}`)
-//       .then(res => {
-//         if (!res.ok) {
-//           throw new Error('Network response was not ok');
-//         }
-//         return res.json();
-//       })
-//       .then(data => setUserData(data))
-//       .catch(err => console.error(err));
-//   }, [userId]);
-
-//   return (
-//     <div className="page">
-//       <header className="header">
-//         <UserMenu userData={userData} />
-//       </header>
-//       <UserProfile userData={userData} />
-//     </div>
-//   );
-// };
-
-// export default App;
-
-//! =====================Class Component===================
-
-import React, { Component } from "react";
-import UserProfile from "./UserProfile.jsx";
-import UserMenu from "./UserMenu.jsx";
-
-class Page extends Component {
-  state = {
-    userData: null,
-  };
-
-  componentDidMount() {
-    this.fetchUserData(this.props.userId);
-  }
-
-  fetchUserData = (userId) => {
-    const userUrl = `https://api.github.com/users/${userId}`;
-    fetch(userUrl)
-      .then((response) => response.json())
-      .then((userData) => {
-        this.setState({
-          userData,
-        });
-      });
-  };
-  render() {
-    return (
-      <div className="page">
-        <header className="header">
-          <UserMenu userData={this.state.userData} />
-        </header>
-        <UserProfile userData={this.state.userData} />
-      </div>
-    );
-  }
+export default function App() {
+  return <FilterableProductTable products={PRODUCTS} />;
 }
-
-export default Page;
