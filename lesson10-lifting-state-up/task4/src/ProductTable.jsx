@@ -3,12 +3,12 @@ import ProductCategoryRow from './ProductCategoryRow';
 import ProductRow from './ProductRow';
 
 const ProductTable = ({ products, filterText, inStockOnly }) => {
-  const { name, category, price, stocked} = products;
   const rows = [];
   let lastCategory = null;
 
   products.forEach(product => {
-    if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+    const { name, category, stocked } = product;
+    if (name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
       return;
     }
     if (inStockOnly && !stocked) {
@@ -20,6 +20,7 @@ const ProductTable = ({ products, filterText, inStockOnly }) => {
     rows.push(<ProductRow product={product} key={name} />);
     lastCategory = category;
   });
+
   return (
     <table>
       <thead>
