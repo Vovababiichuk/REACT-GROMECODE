@@ -3,51 +3,66 @@
 }
 
 body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 22px;
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h2 {
-  margin-top: 0;
-  font-size: 20px;
+.btn {
+  height: 48px;
+  color: #fff;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  padding: 8px;
+  cursor: pointer;
+  background-color: darkgreen;
 }
 
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
+.dialog {
+  position: absolute;
+  top: 30vh;
+  left: 30vw;
+  width: 40vw;
+  max-height: 40vh;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #fffafa;
+  align-items: flex-start;
 
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
+  &__heading {
+    display: flex;
+  }
 
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
+  &__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
+  &__close-btn {
+    transform: rotate(45deg);
+    background-color: transparent;
+    border: none;
+    font-size: 32px;
+    opacity: 0.5;
+    background: #eee;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: auto;
+    outline: none;
+    cursor: pointer;
 
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-inline-start: 20px;
-}
-
-h3, p { margin: 5px 0px; }
-.panel {
-  padding: 10px;
-  border: 1px solid #aaa;
+    &:hover {
+      background: #ccc;
+    }
+  }
 }
