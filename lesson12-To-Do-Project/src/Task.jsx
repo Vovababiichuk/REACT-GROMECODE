@@ -1,10 +1,10 @@
 import React from 'react';
-import clsx from 'clsx';
+import classnames from 'classnames';
 
 const Task = ({ text, done, id, onChange, onDelete }) => {
 
   return (
-    <li className={clsx('list-item', { 'list-item_done': done })}>
+    <li className={classnames('list-item', { 'list-item_done': done })}>
       <input
         type="checkbox"
         className="list-item__checkbox"
