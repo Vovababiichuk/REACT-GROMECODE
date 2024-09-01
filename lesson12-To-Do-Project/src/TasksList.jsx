@@ -1,34 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import Task from './Task.jsx';
 import CreateTaskInput from './CreateTaskInput.jsx';
+import { createTask, getAllTasks, taskStatusChange, deleteTask } from './tasksGateway.jsx';
 
 const TasksList = () => {
-  const [tasks, setTasks] = React.useState([
-    { text: 'Learn React', done: false, id: 1 },
-    { text: 'Learn HTML / CSS', done: false, id: 2 },
-    { text: 'Learn JavaScript', done: true, id: 3 },
-    { text: 'Learn Dev Tools', done: true, id: 4 },
-  ]);
+  const [tasks, setTasks] = React.useState([]);
+
+  useEffect(() => {
+    getAllTasks(setTasks);
+  }, []);
 
   const sortedTasks = [...tasks].sort((a, b) => a.done - b.done);
 
   const onCreate = text => {
-    setTasks(prevTasks => [...prevTasks, { text, done: false, id: Math.random() }]);
+    return createTask(text, setTasks);
   };
 
   const handleTaskStatusChange = id => {
-    setTasks(prevTasks =>
-      prevTasks.map(task => {
-        if (task.id === id) {
-          return { ...task, done: !task.done };
-        }
-        return task;
-      }),
-    );
+    const taskToUpdate = tasks.find(task => task.id === id);
+    const updatedTask = { ...taskToUpdate, done: !taskToUpdate.done };
+
+    return taskStatusChange(id, updatedTask, setTasks);
   };
 
   const handleTaskDelete = id => {
-    return setTasks(prevTasks => prevTasks.filter(task => task.id !== id));
+    return deleteTask(id, setTasks);
   };
 
   return (
