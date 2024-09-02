@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { Link, Route, Switch } from 'react-router-dom';
 import Product from './Product';
 
@@ -18,8 +19,8 @@ const Products = () => {
         <Route exact path="/products">
           <span>Select a product please</span>
         </Route>
-        <Route>
-          <Product path="/products:productId" />
+        <Route path="/products/:productId">
+          <Product />
         </Route>
       </Switch>
     </div>
