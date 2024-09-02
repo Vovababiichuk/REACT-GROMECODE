@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Task from './Task.jsx';
 import CreateTaskInput from './CreateTaskInput.jsx';
 import { createTask, getAllTasks, taskStatusChange, deleteTask } from './tasksGateway.jsx';
 
 const TasksList = () => {
-  const [tasks, setTasks] = React.useState([]);
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     getAllTasks(setTasks);
