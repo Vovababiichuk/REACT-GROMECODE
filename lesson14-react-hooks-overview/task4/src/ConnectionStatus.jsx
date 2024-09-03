@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import clsx from 'clsx';
 
 const ConnectionStatus = () => {
   const [isOnline, setIsOnline] = useState(true);
@@ -18,8 +17,10 @@ const ConnectionStatus = () => {
     };
   }, []);
 
+  const styleStatus = isOnline ? '' : 'status status_offline'
+
   return (
-    <div className={clsx('status', { 'status_offline': !isOnline })}>
+    <div class={`'status ${styleStatus}`}>
       {isOnline ? 'online' : 'offline'}
     </div>
   );
