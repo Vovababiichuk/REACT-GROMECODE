@@ -14,7 +14,7 @@ const Dimensions = () => {
 	}, []);
 
 	return (
-		<div className="dimensions">{width}px - {height}px</div>
+		<div className="dimensions">{`${width}px - ${height}px`}</div>
 	)
 }
 
