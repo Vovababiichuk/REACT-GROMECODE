@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 const Counter = () => {
-	const [count, setCount] = useState(0);
+	const [counter, setCounter] = useState(0);
 
   return (
     <div className="counter">
-      <button onClick={() => setCount(count - 1)} className="counter__button">-</button>
-      <span onClick={() => setCount(0)} className="counter__value"> {count} </span>
-      <button onClick={() => setCount(count + 1)} className="counter__button">+</button>
+      <button onClick={() => setCounter(counter - 1)} className="counter__button">-</button>
+      <span onClick={() => setCounter(0)} className="counter__value"> {counter} </span>
+      <button onClick={() => setCounter(counter + 1)} className="counter__button">+</button>
     </div>
   );
 };
