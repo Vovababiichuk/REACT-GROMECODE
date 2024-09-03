@@ -1,25 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import Numbers from './Numbers';
-import EvenNumbers from './EvenNumbers';
-import OddNumbers from './OddNumbers';
+import React, { useState } from 'react';
+import Clock from './Clock';
+
+const locations = [
+  { location: 'New York', offset: -5 },
+  { location: 'Kyiv', offset: 3 },
+  { location: 'London', offset: 0 },
+];
 
 const App = () => {
-  const [number, setNumber] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNumber(prevNumber => prevNumber + 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const [showClocks, setShowClocks] = useState(true);
 
   return (
-    <div className="app">
-      <OddNumbers title='Odd numbers' number={number} />
-      <EvenNumbers title='Even numbers' number={number} />
-      <Numbers title='All numbers' number={number} />
-      <Numbers title='Just 17' number={17} />
+    <div className="clocks">
+      {showClocks && (
+        <div className="clocks">
+          {locations.map((loc, index) => (
+            <Clock key={index} location={loc.location} offset={loc.offset} />
+          ))}
+        </div>
+      )}
+      <button onClick={() => setShowClocks(!showClocks)}>
+        {showClocks ? 'Hide' : 'Show'} Clocks
+      </button>
     </div>
   );
 };
