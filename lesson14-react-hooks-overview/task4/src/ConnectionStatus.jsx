@@ -45,16 +45,16 @@ const ConnectionStatus = () => {
     window.addEventListener("offline", handleStatusOffline);
 
     return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
+      window.removeEventListener("online", handleStatusOnline);
+      window.removeEventListener("offline", handleStatusOffline);
     };
   }, []);
 
-  const addStatusClass = isOnline ? "" : "status_offline";
+  const addStatusClass = isOnline ? '' : 'status_offline';
 
   return (
     <div className={`status ${addStatusClass}`}>
-      {isOnline ? "online" : "offline"}
+      {isOnline ? 'online' : 'offline'}
     </div>
   );
 };
