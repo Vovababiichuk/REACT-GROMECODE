@@ -1,25 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import Numbers from './Numbers';
-import EvenNumbers from './EvenNumbers';
-import OddNumbers from './OddNumbers';
+import React from 'react';
+import User from './User';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 const App = () => {
-  const [number, setNumber] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNumber(prevNumber => prevNumber + 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="app">
-      <OddNumbers title='Odd numbers' number={number} />
-      <EvenNumbers title='Even numbers' number={number} />
-      <Numbers title='All numbers' number={number} />
-      <Numbers title='Just 17' number={17} />
+    <div className="page">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <div className="page__content">
+              <h1>Users</h1>
+              <ul className="navigation">
+                <li className="navigation__item">
+                  <Link to="/users/github">Github</Link>
+                </li>
+                <li className="navigation__item">
+                  <Link to="/users/facebook">Facebook</Link>
+                </li>
+              </ul>
+              <span>Select a user please</span>
+            </div>
+          </Route>
+          <Route path="/users/:userId">
+            <User />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 };

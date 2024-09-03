@@ -1,79 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#root {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .page {
-  height: 100vh;
   width: 100vw;
-}
-
-.title {
-  text-align: center;
-  margin: 32px 0;
-}
-
-.content {
+  height: 100vh;
   display: flex;
-}
 
-.column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.cart-title {
-  font-size: 24px;
-  opacity: 0.7;
-}
-
-.products {
-  margin-top: 32px;
-
-  &__list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-  }
-
-  &__list-item {
+  &__content {
     display: flex;
-    line-height: 32px;
-  }
-
-  &__item-price {
-    margin-left: auto;
-    font-weight: 700;
-    opacity: 0.7;
-  }
-
-  &__total {
-    text-align: right;
-    font-weight: 700;
-    border-top: 1px solid #ccc;
-    padding-top: 8px;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
   }
 }
 
-.user-form {
+.navigation {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    margin: 8px;
+  }
+}
+
+.user {
   display: flex;
   flex-direction: column;
+  margin: auto;
+  align-items: center;
 
-  &__input {
-    border-radius: 8px;
-    border: 2px solid #ccc;
-    margin: 8px;
-    width: 150px;
-    padding: 8px;
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+
+  &__info {
+    text-align: center;
+    font-size: 24px;
+    margin: 32px;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__location {
+    opacity: 0.5;
+    margin-left: 16px;
   }
 }
