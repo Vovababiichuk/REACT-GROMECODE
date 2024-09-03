@@ -21,7 +21,7 @@ const User = () => {
   }, [userId]);
 
   const { name, location, avatar_url: avatarUrl } = userData;
-  
+
   return (
     <div className="user">
       <img alt="User Avatar" src={avatarUrl} className="user__avatar" />
