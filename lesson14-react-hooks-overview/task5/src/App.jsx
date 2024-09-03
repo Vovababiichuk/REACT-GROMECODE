@@ -8,19 +8,19 @@ const locations = [
 ];
 
 const App = () => {
-  const [showClocks, setShowClocks] = useState(true);
+  const [isVisibleClocks, setIsVisibleClocks] = useState(true);
 
   return (
     <div className="clocks">
-      {showClocks && (
+      {isVisibleClocks && (
         <div className="clocks">
           {locations.map((loc, index) => (
             <Clock key={index} location={loc.location} offset={loc.offset} />
           ))}
         </div>
       )}
-      <button onClick={() => setShowClocks(!showClocks)}>
-        {showClocks ? 'Hide' : 'Show'} Clocks
+      <button onClick={() => setIsVisibleClocks(!isVisibleClocks)}>
+        {isVisibleClocks ? 'Hide' : 'Show'} Clocks
       </button>
     </div>
   );
